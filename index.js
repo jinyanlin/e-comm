@@ -10,7 +10,7 @@ dotenv.config();
 
 app.use(express.static('public'));  //can style.css in public be use
 app.use(express.json());
-app.use('/api/user',userRoute);
+app.use('/api/users',userRoute);
 app.use('/api/auth',authRoute);
 
 //connect mongodb
