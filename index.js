@@ -4,6 +4,7 @@ const app = express();
 const dotenv = require('dotenv');
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const productRoute = require('./routes/product');
 const { json } = require('body-parser');
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.static('public'));  //can style.css in public be use
 app.use(express.json());
 app.use('/api/users',userRoute);
 app.use('/api/auth',authRoute);
+app.use('/api/products',productRoute);
 
 //connect mongodb
 mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true})
